@@ -1,0 +1,39 @@
+
+# Visual Studio cache ve ayar dosyaları
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build çıktıları
+bin/
+obj/
+[Bb]uild/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+
+# Paketler
+packages/
+*.nupkg
+
+# Rider / JetBrains
+.idea/
+
+# Test sonuçları
+TestResult*/
+*.trx
+
+# Diğer geçici dosyalar
+*.cache
+*.log
+*.vsidx
+*.vscode/
+
+# NuGet
+project.lock.json
+
+# Publish çıktıları
+*.publishsettings

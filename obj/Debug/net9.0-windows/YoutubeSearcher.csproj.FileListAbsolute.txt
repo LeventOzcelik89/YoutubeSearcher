@@ -1,9 +1,0 @@
-D:\Projects\YoutubeSearcher\obj\Debug\net9.0-windows\YoutubeSearcher.csproj.AssemblyReference.cache
-D:\Projects\YoutubeSearcher\obj\Debug\net9.0-windows\YoutubeSearcher.Form1.resources
-D:\Projects\YoutubeSearcher\obj\Debug\net9.0-windows\YoutubeSearcher.Main.resources
-D:\Projects\YoutubeSearcher\obj\Debug\net9.0-windows\YoutubeSearcher.csproj.GenerateResource.cache
-D:\Projects\YoutubeSearcher\obj\Debug\net9.0-windows\YoutubeSearcher.GeneratedMSBuildEditorConfig.editorconfig
-D:\Projects\YoutubeSearcher\obj\Debug\net9.0-windows\YoutubeSearcher.AssemblyInfoInputs.cache
-D:\Projects\YoutubeSearcher\obj\Debug\net9.0-windows\YoutubeSearcher.AssemblyInfo.cs
-D:\Projects\YoutubeSearcher\obj\Debug\net9.0-windows\YoutubeSearcher.csproj.CoreCompileInputs.cache
-D:\Projects\YoutubeSearcher\obj\Debug\net9.0-windows\YoutubeSearcher.sourcelink.json
