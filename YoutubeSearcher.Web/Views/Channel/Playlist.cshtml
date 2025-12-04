@@ -1,0 +1,84 @@
+﻿@{
+    ViewData["Title"] = "Playlist Arama";
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="mb-4">Playlist Arama</h1>
+
+            <!-- Kanal Arama Bölümü -->
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <input type="text" id="playlist" class="form-control form-control-lg"
+                                   placeholder="Playlist URL girin" 
+                                   value="https://www.youtube.com/playlist?list=PLGBuKfnErZlDXoq9Naa6qYtstCv_8CVRQ" />
+                        </div>
+                        <div class="col-md-2">
+                            <button id="searchChannelBtn" class="btn btn-primary btn-lg w-100">Ara</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kanal Bilgileri -->
+            <div id="channelInfo" class="card mb-4" style="display: none;">
+                <div class="card-header">
+                    <h5 id="channelTitle"></h5>
+                </div>
+            </div>
+
+            <!-- Oynatma Listeleri -->
+            <div id="playlistsSection" class="card mb-4" style="display: none;">
+                <div class="card-header">
+                    <h5>Oynatma Listeleri</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row g-3" id="playlistsList">
+                        <!-- Playlistler buraya eklenecek -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Playlist İçeriği -->
+            <div id="playlistVideosSection" class="card" style="display: none;">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <div>
+                        <h5 id="playlistTitle" class="mb-0"></h5>
+                        <small id="playlistVideoCount" class="text-muted"></small>
+                    </div>
+                    <div>
+                        <button id="selectAllBtn" class="btn btn-sm btn-outline-primary me-2">Tümünü Seç</button>
+                        <button id="deselectAllBtn" class="btn btn-sm btn-outline-secondary me-2">Seçimi Kaldır</button>
+                        <button id="downloadPlaylistBtn" class="btn btn-sm btn-success" style="display: none;">
+                            Seçilenleri İndir
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row g-3" id="playlistVideos">
+                        <!-- Videolar buraya eklenecek -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Progress Bar -->
+            <div id="progressSection" class="mt-4" style="display: none;">
+                <div class="progress" style="height: 25px;">
+                    <div id="progressBar" class="progress-bar progress-bar-striped progress-bar-animated"
+                         role="progressbar" style="width: 0%">
+                        0%
+                    </div>
+                </div>
+                <p id="progressText" class="text-center mt-2"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/playlist-searcher.js"></script>
+}
+

@@ -1,0 +1,367 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Projects\\YoutubeSearcher\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2A5ACE94-6C77-42DD-842A-E2BA3A59389E}|YoutubeSearcher.Web\\YoutubeSearcher.Web.csproj|d:\\projects\\youtubesearcher\\youtubesearcher.web\\controllers\\channelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A5ACE94-6C77-42DD-842A-E2BA3A59389E}|YoutubeSearcher.Web\\YoutubeSearcher.Web.csproj|solutionrelative:youtubesearcher.web\\controllers\\channelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A5ACE94-6C77-42DD-842A-E2BA3A59389E}|YoutubeSearcher.Web\\YoutubeSearcher.Web.csproj|d:\\projects\\youtubesearcher\\youtubesearcher.web\\services\\youtubeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A5ACE94-6C77-42DD-842A-E2BA3A59389E}|YoutubeSearcher.Web\\YoutubeSearcher.Web.csproj|solutionrelative:youtubesearcher.web\\services\\youtubeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A5ACE94-6C77-42DD-842A-E2BA3A59389E}|YoutubeSearcher.Web\\YoutubeSearcher.Web.csproj|d:\\projects\\youtubesearcher\\youtubesearcher.web\\controllers\\downloadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A5ACE94-6C77-42DD-842A-E2BA3A59389E}|YoutubeSearcher.Web\\YoutubeSearcher.Web.csproj|solutionrelative:youtubesearcher.web\\controllers\\downloadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A5ACE94-6C77-42DD-842A-E2BA3A59389E}|YoutubeSearcher.Web\\YoutubeSearcher.Web.csproj|d:\\projects\\youtubesearcher\\youtubesearcher.web\\wwwroot\\js\\playlist-searcher.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{2A5ACE94-6C77-42DD-842A-E2BA3A59389E}|YoutubeSearcher.Web\\YoutubeSearcher.Web.csproj|solutionrelative:youtubesearcher.web\\wwwroot\\js\\playlist-searcher.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A5ACE94-6C77-42DD-842A-E2BA3A59389E}|YoutubeSearcher.Web\\YoutubeSearcher.Web.csproj|d:\\projects\\youtubesearcher\\youtubesearcher.web\\views\\channel\\playlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2A5ACE94-6C77-42DD-842A-E2BA3A59389E}|YoutubeSearcher.Web\\YoutubeSearcher.Web.csproj|solutionrelative:youtubesearcher.web\\views\\channel\\playlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A5ACE94-6C77-42DD-842A-E2BA3A59389E}|YoutubeSearcher.Web\\YoutubeSearcher.Web.csproj|d:\\projects\\youtubesearcher\\youtubesearcher.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A5ACE94-6C77-42DD-842A-E2BA3A59389E}|YoutubeSearcher.Web\\YoutubeSearcher.Web.csproj|solutionrelative:youtubesearcher.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A5ACE94-6C77-42DD-842A-E2BA3A59389E}|YoutubeSearcher.Web\\YoutubeSearcher.Web.csproj|d:\\projects\\youtubesearcher\\youtubesearcher.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2A5ACE94-6C77-42DD-842A-E2BA3A59389E}|YoutubeSearcher.Web\\YoutubeSearcher.Web.csproj|solutionrelative:youtubesearcher.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A5ACE94-6C77-42DD-842A-E2BA3A59389E}|YoutubeSearcher.Web\\YoutubeSearcher.Web.csproj|d:\\projects\\youtubesearcher\\youtubesearcher.web\\youtubesearcher.web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{2A5ACE94-6C77-42DD-842A-E2BA3A59389E}|YoutubeSearcher.Web\\YoutubeSearcher.Web.csproj|solutionrelative:youtubesearcher.web\\youtubesearcher.web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A5ACE94-6C77-42DD-842A-E2BA3A59389E}|YoutubeSearcher.Web\\YoutubeSearcher.Web.csproj|d:\\projects\\youtubesearcher\\youtubesearcher.web\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2A5ACE94-6C77-42DD-842A-E2BA3A59389E}|YoutubeSearcher.Web\\YoutubeSearcher.Web.csproj|solutionrelative:youtubesearcher.web\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A5ACE94-6C77-42DD-842A-E2BA3A59389E}|YoutubeSearcher.Web\\YoutubeSearcher.Web.csproj|d:\\projects\\youtubesearcher\\youtubesearcher.web\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2A5ACE94-6C77-42DD-842A-E2BA3A59389E}|YoutubeSearcher.Web\\YoutubeSearcher.Web.csproj|solutionrelative:youtubesearcher.web\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A5ACE94-6C77-42DD-842A-E2BA3A59389E}|YoutubeSearcher.Web\\YoutubeSearcher.Web.csproj|d:\\projects\\youtubesearcher\\youtubesearcher.web\\views\\channel\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2A5ACE94-6C77-42DD-842A-E2BA3A59389E}|YoutubeSearcher.Web\\YoutubeSearcher.Web.csproj|solutionrelative:youtubesearcher.web\\views\\channel\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A5ACE94-6C77-42DD-842A-E2BA3A59389E}|YoutubeSearcher.Web\\YoutubeSearcher.Web.csproj|d:\\projects\\youtubesearcher\\youtubesearcher.web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A5ACE94-6C77-42DD-842A-E2BA3A59389E}|YoutubeSearcher.Web\\YoutubeSearcher.Web.csproj|solutionrelative:youtubesearcher.web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Projects\\YoutubeSearcher\\obj\\Debug\\net9.0-windows\\.NETCoreApp,Version=v9.0.AssemblyAttributes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:obj\\Debug\\net9.0-windows\\.NETCoreApp,Version=v9.0.AssemblyAttributes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A5ACE94-6C77-42DD-842A-E2BA3A59389E}|YoutubeSearcher.Web\\YoutubeSearcher.Web.csproj|d:\\projects\\youtubesearcher\\youtubesearcher.web\\hubs\\searchhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A5ACE94-6C77-42DD-842A-E2BA3A59389E}|YoutubeSearcher.Web\\YoutubeSearcher.Web.csproj|solutionrelative:youtubesearcher.web\\hubs\\searchhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A5ACE94-6C77-42DD-842A-E2BA3A59389E}|YoutubeSearcher.Web\\YoutubeSearcher.Web.csproj|d:\\projects\\youtubesearcher\\youtubesearcher.web\\models\\extensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A5ACE94-6C77-42DD-842A-E2BA3A59389E}|YoutubeSearcher.Web\\YoutubeSearcher.Web.csproj|solutionrelative:youtubesearcher.web\\models\\extensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Projects\\YoutubeSearcher\\obj\\Debug\\net9.0-windows\\YoutubeSearcher.AssemblyInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:obj\\Debug\\net9.0-windows\\YoutubeSearcher.AssemblyInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A5ACE94-6C77-42DD-842A-E2BA3A59389E}|YoutubeSearcher.Web\\YoutubeSearcher.Web.csproj|d:\\projects\\youtubesearcher\\youtubesearcher.web\\services\\searchservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A5ACE94-6C77-42DD-842A-E2BA3A59389E}|YoutubeSearcher.Web\\YoutubeSearcher.Web.csproj|solutionrelative:youtubesearcher.web\\services\\searchservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A5ACE94-6C77-42DD-842A-E2BA3A59389E}|YoutubeSearcher.Web\\YoutubeSearcher.Web.csproj|d:\\projects\\youtubesearcher\\youtubesearcher.web\\services\\downloadservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A5ACE94-6C77-42DD-842A-E2BA3A59389E}|YoutubeSearcher.Web\\YoutubeSearcher.Web.csproj|solutionrelative:youtubesearcher.web\\services\\downloadservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A5ACE94-6C77-42DD-842A-E2BA3A59389E}|YoutubeSearcher.Web\\YoutubeSearcher.Web.csproj|d:\\projects\\youtubesearcher\\youtubesearcher.web\\wwwroot\\js\\youtube-searcher.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{2A5ACE94-6C77-42DD-842A-E2BA3A59389E}|YoutubeSearcher.Web\\YoutubeSearcher.Web.csproj|solutionrelative:youtubesearcher.web\\wwwroot\\js\\youtube-searcher.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A5ACE94-6C77-42DD-842A-E2BA3A59389E}|YoutubeSearcher.Web\\YoutubeSearcher.Web.csproj|d:\\projects\\youtubesearcher\\youtubesearcher.web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2A5ACE94-6C77-42DD-842A-E2BA3A59389E}|YoutubeSearcher.Web\\YoutubeSearcher.Web.csproj|solutionrelative:youtubesearcher.web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A5ACE94-6C77-42DD-842A-E2BA3A59389E}|YoutubeSearcher.Web\\YoutubeSearcher.Web.csproj|d:\\projects\\youtubesearcher\\youtubesearcher.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2A5ACE94-6C77-42DD-842A-E2BA3A59389E}|YoutubeSearcher.Web\\YoutubeSearcher.Web.csproj|solutionrelative:youtubesearcher.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ChannelController.cs",
+              "DocumentMoniker": "D:\\Projects\\YoutubeSearcher\\YoutubeSearcher.Web\\Controllers\\ChannelController.cs",
+              "RelativeDocumentMoniker": "YoutubeSearcher.Web\\Controllers\\ChannelController.cs",
+              "ToolTip": "D:\\Projects\\YoutubeSearcher\\YoutubeSearcher.Web\\Controllers\\ChannelController.cs",
+              "RelativeToolTip": "YoutubeSearcher.Web\\Controllers\\ChannelController.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAIAxwDcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T20:20:46.212Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "playlist-searcher.js",
+              "DocumentMoniker": "D:\\Projects\\YoutubeSearcher\\YoutubeSearcher.Web\\wwwroot\\js\\playlist-searcher.js",
+              "RelativeDocumentMoniker": "YoutubeSearcher.Web\\wwwroot\\js\\playlist-searcher.js",
+              "ToolTip": "D:\\Projects\\YoutubeSearcher\\YoutubeSearcher.Web\\wwwroot\\js\\playlist-searcher.js",
+              "RelativeToolTip": "YoutubeSearcher.Web\\wwwroot\\js\\playlist-searcher.js",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-12-04T14:29:51.313Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\Projects\\YoutubeSearcher\\YoutubeSearcher.Web\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "YoutubeSearcher.Web\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\Projects\\YoutubeSearcher\\YoutubeSearcher.Web\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "YoutubeSearcher.Web\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAABdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-04T14:30:44.533Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "D:\\Projects\\YoutubeSearcher\\YoutubeSearcher.Web\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "YoutubeSearcher.Web\\Views\\_ViewImports.cshtml",
+              "ToolTip": "D:\\Projects\\YoutubeSearcher\\YoutubeSearcher.Web\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "YoutubeSearcher.Web\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-04T14:30:43.4Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "D:\\Projects\\YoutubeSearcher\\YoutubeSearcher.Web\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "YoutubeSearcher.Web\\Views\\_ViewStart.cshtml",
+              "ToolTip": "D:\\Projects\\YoutubeSearcher\\YoutubeSearcher.Web\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "YoutubeSearcher.Web\\Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-04T14:30:42.028Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Projects\\YoutubeSearcher\\YoutubeSearcher.Web\\Views\\Channel\\Index.cshtml",
+              "RelativeDocumentMoniker": "YoutubeSearcher.Web\\Views\\Channel\\Index.cshtml",
+              "ToolTip": "D:\\Projects\\YoutubeSearcher\\YoutubeSearcher.Web\\Views\\Channel\\Index.cshtml",
+              "RelativeToolTip": "YoutubeSearcher.Web\\Views\\Channel\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-04T14:29:01.196Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Playlist.cshtml",
+              "DocumentMoniker": "D:\\Projects\\YoutubeSearcher\\YoutubeSearcher.Web\\Views\\Channel\\Playlist.cshtml",
+              "RelativeDocumentMoniker": "YoutubeSearcher.Web\\Views\\Channel\\Playlist.cshtml",
+              "ToolTip": "D:\\Projects\\YoutubeSearcher\\YoutubeSearcher.Web\\Views\\Channel\\Playlist.cshtml",
+              "RelativeToolTip": "YoutubeSearcher.Web\\Views\\Channel\\Playlist.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-04T14:28:56.91Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "YoutubeSearcher.Web.csproj",
+              "DocumentMoniker": "D:\\Projects\\YoutubeSearcher\\YoutubeSearcher.Web\\YoutubeSearcher.Web.csproj",
+              "RelativeDocumentMoniker": "YoutubeSearcher.Web\\YoutubeSearcher.Web.csproj",
+              "ToolTip": "D:\\Projects\\YoutubeSearcher\\YoutubeSearcher.Web\\YoutubeSearcher.Web.csproj",
+              "RelativeToolTip": "YoutubeSearcher.Web\\YoutubeSearcher.Web.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-12-04T07:44:26.115Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "SearchHub.cs",
+              "DocumentMoniker": "D:\\Projects\\YoutubeSearcher\\YoutubeSearcher.Web\\Hubs\\SearchHub.cs",
+              "RelativeDocumentMoniker": "YoutubeSearcher.Web\\Hubs\\SearchHub.cs",
+              "ToolTip": "D:\\Projects\\YoutubeSearcher\\YoutubeSearcher.Web\\Hubs\\SearchHub.cs",
+              "RelativeToolTip": "YoutubeSearcher.Web\\Hubs\\SearchHub.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T07:39:39.236Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "YoutubeSearcher.AssemblyInfo.cs",
+              "DocumentMoniker": "D:\\Projects\\YoutubeSearcher\\obj\\Debug\\net9.0-windows\\YoutubeSearcher.AssemblyInfo.cs",
+              "RelativeDocumentMoniker": "obj\\Debug\\net9.0-windows\\YoutubeSearcher.AssemblyInfo.cs",
+              "ToolTip": "D:\\Projects\\YoutubeSearcher\\obj\\Debug\\net9.0-windows\\YoutubeSearcher.AssemblyInfo.cs",
+              "RelativeToolTip": "obj\\Debug\\net9.0-windows\\YoutubeSearcher.AssemblyInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T07:36:42.701Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DownloadController.cs",
+              "DocumentMoniker": "D:\\Projects\\YoutubeSearcher\\YoutubeSearcher.Web\\Controllers\\DownloadController.cs",
+              "RelativeDocumentMoniker": "YoutubeSearcher.Web\\Controllers\\DownloadController.cs",
+              "ToolTip": "D:\\Projects\\YoutubeSearcher\\YoutubeSearcher.Web\\Controllers\\DownloadController.cs",
+              "RelativeToolTip": "YoutubeSearcher.Web\\Controllers\\DownloadController.cs",
+              "ViewState": "AgIAAJYAAAAAAAAAAAApwLYAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-02T21:17:22.443Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": ".NETCoreApp,Version=v9.0.AssemblyAttributes.cs",
+              "DocumentMoniker": "D:\\Projects\\YoutubeSearcher\\obj\\Debug\\net9.0-windows\\.NETCoreApp,Version=v9.0.AssemblyAttributes.cs",
+              "RelativeDocumentMoniker": "obj\\Debug\\net9.0-windows\\.NETCoreApp,Version=v9.0.AssemblyAttributes.cs",
+              "ToolTip": "D:\\Projects\\YoutubeSearcher\\obj\\Debug\\net9.0-windows\\.NETCoreApp,Version=v9.0.AssemblyAttributes.cs",
+              "RelativeToolTip": "obj\\Debug\\net9.0-windows\\.NETCoreApp,Version=v9.0.AssemblyAttributes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T07:30:04.163Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Extensions.cs",
+              "DocumentMoniker": "D:\\Projects\\YoutubeSearcher\\YoutubeSearcher.Web\\Models\\Extensions.cs",
+              "RelativeDocumentMoniker": "YoutubeSearcher.Web\\Models\\Extensions.cs",
+              "ToolTip": "D:\\Projects\\YoutubeSearcher\\YoutubeSearcher.Web\\Models\\Extensions.cs",
+              "RelativeToolTip": "YoutubeSearcher.Web\\Models\\Extensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T21:26:53.916Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "DownloadService.cs",
+              "DocumentMoniker": "D:\\Projects\\YoutubeSearcher\\YoutubeSearcher.Web\\Services\\DownloadService.cs",
+              "RelativeDocumentMoniker": "YoutubeSearcher.Web\\Services\\DownloadService.cs",
+              "ToolTip": "D:\\Projects\\YoutubeSearcher\\YoutubeSearcher.Web\\Services\\DownloadService.cs",
+              "RelativeToolTip": "YoutubeSearcher.Web\\Services\\DownloadService.cs",
+              "ViewState": "AgIAAAoBAAAAAAAAAAAhwBEBAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T20:41:53.32Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "YoutubeService.cs",
+              "DocumentMoniker": "D:\\Projects\\YoutubeSearcher\\YoutubeSearcher.Web\\Services\\YoutubeService.cs",
+              "RelativeDocumentMoniker": "YoutubeSearcher.Web\\Services\\YoutubeService.cs",
+              "ToolTip": "D:\\Projects\\YoutubeSearcher\\YoutubeSearcher.Web\\Services\\YoutubeService.cs",
+              "RelativeToolTip": "YoutubeSearcher.Web\\Services\\YoutubeService.cs",
+              "ViewState": "AgIAAHYAAAAAAAAAAAApwIwAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T20:21:14.693Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "youtube-searcher.js",
+              "DocumentMoniker": "D:\\Projects\\YoutubeSearcher\\YoutubeSearcher.Web\\wwwroot\\js\\youtube-searcher.js",
+              "RelativeDocumentMoniker": "YoutubeSearcher.Web\\wwwroot\\js\\youtube-searcher.js",
+              "ToolTip": "D:\\Projects\\YoutubeSearcher\\YoutubeSearcher.Web\\wwwroot\\js\\youtube-searcher.js",
+              "RelativeToolTip": "YoutubeSearcher.Web\\wwwroot\\js\\youtube-searcher.js",
+              "ViewState": "AgIAAOEAAAAAAAAAAAAowPMAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-12-03T19:50:48.826Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Projects\\YoutubeSearcher\\YoutubeSearcher.Web\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "YoutubeSearcher.Web\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\Projects\\YoutubeSearcher\\YoutubeSearcher.Web\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "YoutubeSearcher.Web\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAACQAAAAAAAAAAIBJwEUAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-03T19:50:35.993Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Projects\\YoutubeSearcher\\YoutubeSearcher.Web\\Program.cs",
+              "RelativeDocumentMoniker": "YoutubeSearcher.Web\\Program.cs",
+              "ToolTip": "D:\\Projects\\YoutubeSearcher\\YoutubeSearcher.Web\\Program.cs",
+              "RelativeToolTip": "YoutubeSearcher.Web\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T19:50:28.94Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Projects\\YoutubeSearcher\\YoutubeSearcher.Web\\appsettings.json",
+              "RelativeDocumentMoniker": "YoutubeSearcher.Web\\appsettings.json",
+              "ToolTip": "D:\\Projects\\YoutubeSearcher\\YoutubeSearcher.Web\\appsettings.json",
+              "RelativeToolTip": "YoutubeSearcher.Web\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-03T19:50:27.886Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "SearchService.cs",
+              "DocumentMoniker": "D:\\Projects\\YoutubeSearcher\\YoutubeSearcher.Web\\Services\\SearchService.cs",
+              "RelativeDocumentMoniker": "YoutubeSearcher.Web\\Services\\SearchService.cs",
+              "ToolTip": "D:\\Projects\\YoutubeSearcher\\YoutubeSearcher.Web\\Services\\SearchService.cs",
+              "RelativeToolTip": "YoutubeSearcher.Web\\Services\\SearchService.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwBAAAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-02T21:33:17.541Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\Projects\\YoutubeSearcher\\YoutubeSearcher.Web\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "YoutubeSearcher.Web\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\Projects\\YoutubeSearcher\\YoutubeSearcher.Web\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "YoutubeSearcher.Web\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-02T21:17:30.535Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
