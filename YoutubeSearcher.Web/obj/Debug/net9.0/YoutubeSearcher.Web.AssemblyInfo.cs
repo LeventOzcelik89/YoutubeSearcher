@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("YoutubeSearcher.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d84893875bec72408116f931ccb44d9c0a74c5d6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+abc80ff67aeea4793a45ef94783efeb38e11cf84")]
 [assembly: System.Reflection.AssemblyProductAttribute("YoutubeSearcher.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("YoutubeSearcher.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

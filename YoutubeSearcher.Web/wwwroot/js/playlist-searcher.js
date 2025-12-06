@@ -27,6 +27,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 async function searchChannel() {
     const playlistInput = document.getElementById('playlist').value.trim();
+    const formatSelectInput = document.getElementById('formatSelect');
+
     if (!playlistInput) {
         alert('Lütfen playlist URL girin');
         return;
@@ -46,7 +48,7 @@ async function searchChannel() {
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
             },
-            body: `playListUrl=${encodeURIComponent(playlistInput)}&searchId=` + currentSearchId
+            body: `playListUrl=${encodeURIComponent(playlistInput)}&searchId=` + currentSearchId + '&type=' + formatSelectInput.value
         });
 
         const data = await response.json();

@@ -64,7 +64,7 @@ namespace YoutubeSearcher.Web.Controllers
         //    return Json(new { success = true });
         //}
 
-        static async Task ProcessVideoAsync(VideoInfo video, YoutubeClient youtube, string outputDir, string playlistName, IHubContext<SearchHub> hubContext, string searchId)
+        static async Task ProcessVideoToMp3Async(VideoInfo video, YoutubeClient youtube, string outputDir, string playlistName, IHubContext<SearchHub> hubContext, string searchId)
         {
             // Manifest ve en yüksek bitrateli ses stream'i
             var streamManifest = await youtube.Videos.Streams.GetManifestAsync(video.Url);
@@ -164,6 +164,125 @@ namespace YoutubeSearcher.Web.Controllers
             }
 
         }
+
+        static async Task ProcessVideoAsync(VideoInfo video, YoutubeClient youtube, string outputDir, string playlistName, IHubContext<SearchHub> hubContext, string searchId)
+        {
+            // Manifest ve en yüksek bitrateli muxed (video + audio tek dosya)
+            var streamManifest = await youtube.Videos.Streams.GetManifestAsync(video.Url);
+            var streamInfo = streamManifest.GetMuxedStreams()
+                                           .OrderByDescending(s => s.Bitrate)
+                                           .FirstOrDefault();
+
+            if (streamInfo == null)
+                throw new InvalidOperationException("Uygun video akışı bulunamadı.");
+
+            // Klasör işlemleri
+            if (!Directory.Exists(outputDir)) Directory.CreateDirectory(outputDir);
+            outputDir = Path.Combine(outputDir, playlistName);
+            if (!Directory.Exists(outputDir)) Directory.CreateDirectory(outputDir);
+
+            // Dosya adı
+            var safeTitle = string.Join("_", video.Title.Split(Path.GetInvalidFileNameChars()));
+
+            // Geçici indirilen video
+            var tempVideoPath = Path.Combine(outputDir, $"{safeTitle}_temp.{streamInfo.Container}");
+
+            // Final video (metadata gömülmüş)
+            var finalVideoPath = Path.Combine(outputDir, $"{safeTitle}.{streamInfo.Container}");
+
+            // Video indir
+            await youtube.Videos.Streams.DownloadAsync(streamInfo, tempVideoPath);
+
+            // Thumbnail indir
+            string tempCoverPath = null;
+            try
+            {
+                using var http = new HttpClient();
+                var bytes = await http.GetByteArrayAsync(video.ThumbnailUrl);
+
+                string ext = ".jpg";
+                try
+                {
+                    using var resp = await http.GetAsync(video.ThumbnailUrl, HttpCompletionOption.ResponseHeadersRead);
+                    if (resp.Content.Headers.ContentType?.MediaType?.Contains("png", StringComparison.OrdinalIgnoreCase) == true)
+                        ext = ".png";
+                }
+                catch { }
+
+                tempCoverPath = Path.Combine(Path.GetTempPath(), $"cover_{Guid.NewGuid():N}{ext}");
+                await System.IO.File.WriteAllBytesAsync(tempCoverPath, bytes);
+            }
+            catch
+            {
+                // Thumbnail indirilemezse devam edilir (kapak olmayacak)
+            }
+
+            try
+            {
+
+                var ff = FFMpegArguments.FromFileInput(tempVideoPath);
+
+                // Eğer MKV ve kapak varsa → ikinci input olarak ekle
+                bool coverCanBeAdded =
+                    tempCoverPath != null &&
+                    streamInfo.Container.Name.Equals("mkv", StringComparison.OrdinalIgnoreCase);
+
+                if (coverCanBeAdded)
+                {
+                    ff = ff.AddFileInput(tempCoverPath);
+                }
+
+                await ff
+                    .OutputToFile(finalVideoPath, overwrite: true, options =>
+                    {
+                        // Metadata
+                        options.WithCustomArgument($"-metadata title=\"{video.Title.EscapeForFfmpeg()}\"");
+                        options.WithCustomArgument($"-metadata artist=\"{video.Author.EscapeForFfmpeg()}\"");
+                        options.WithCustomArgument($"-metadata album=\"{playlistName.EscapeForFfmpeg()}\"");
+                        options.WithCustomArgument($"-metadata comment=\"Downloaded via my app\"");
+
+                        // Kapak varsa map ve attach işlemleri
+                        if (coverCanBeAdded)
+                        {
+                            options.WithCustomArgument("-map 0");
+                            options.WithCustomArgument("-map 1");
+                            options.WithCustomArgument("-metadata:s:v title=\"Cover\"");
+                            options.WithCustomArgument("-metadata:s:v comment=\"Cover (front)\"");
+                            options.WithCustomArgument("-disposition:v attached_pic");
+                        }
+                        else
+                        {
+                            // Kapak yoksa sadece ana videoyu map'le
+                            options.WithCustomArgument("-map 0");
+                        }
+
+                        // Re-encode yok
+                        options.CopyChannel();
+                    })
+                    .ProcessAsynchronously();
+
+
+            }
+            catch (Exception ffmEx)
+            {
+                throw new Exception("FFmpeg işlemi başarısız: " + ffmEx.Message, ffmEx);
+            }
+            finally
+            {
+                // Geçici video silinsin
+                if (System.IO.File.Exists(tempVideoPath))
+                    try { System.IO.File.Delete(tempVideoPath); } catch { }
+
+                // Kapak dosyası silinsin
+                if (tempCoverPath != null && System.IO.File.Exists(tempCoverPath))
+                    try { System.IO.File.Delete(tempCoverPath); } catch { }
+
+                await hubContext.Clients.Group(searchId).SendAsync("VideoDownloaded", video);
+            }
+        }
+
+
+
 
         [HttpPost]
         public async Task<IActionResult> SearchChannel(string channelInput)
@@ -276,7 +395,7 @@ namespace YoutubeSearcher.Web.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> StartSearchPlaylist(string playListUrl, string searchId)
+        public async Task<IActionResult> StartSearchPlaylist(string playListUrl, string searchId, string type = "mp3")
         {
             if (string.IsNullOrWhiteSpace(playListUrl))
             {
@@ -286,13 +405,13 @@ namespace YoutubeSearcher.Web.Controllers
             // Cancellation flag'ini temizle
             _searchPlaylistCancellations[searchId] = false;
 
-            _ = Task.Run(async () => { await StartDownloadPlaylist(playListUrl, searchId); });
+            _ = Task.Run(async () => { await StartDownloadPlaylist(playListUrl, searchId, type); });
 
             return Json(new { success = true, message = "İndirme başlatıldı." });
 
         }
 
-        private async Task<IActionResult> StartDownloadPlaylist(string playListUrl, string searchId)
+        private async Task<IActionResult> StartDownloadPlaylist(string playListUrl, string searchId, string type = "mp3")
         {
             var count = 0;
             const int maxResults = 1000;
@@ -317,7 +436,14 @@ namespace YoutubeSearcher.Web.Controllers
 
                 try
                 {
-                    ProcessVideoAsync(video, youtubeClient, outputDir, playlistName, _hubContext, searchId);
+                    if (type == "mp3")
+                    {
+                        ProcessVideoToMp3Async(video, youtubeClient, outputDir, playlistName, _hubContext, searchId);
+                    }
+                    else if (type == "mp4")
+                    {
+                        ProcessVideoAsync(video, youtubeClient, outputDir, playlistName, _hubContext, searchId);
+                    }
                     count++;
                 }
                 catch (Exception ex)

@@ -11,10 +11,16 @@
             <div class="card mb-4">
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-md-10">
+                        <div class="col-md-8">
                             <input type="text" id="playlist" class="form-control form-control-lg"
                                    placeholder="Playlist URL girin"
                                    value="https://www.youtube.com/playlist?list=PLGBuKfnErZlDXoq9Naa6qYtstCv_8CVRQ" />
+                        </div>
+                        <div class="col-md-2">
+                            <select id="formatSelect" class="form-select form-select-lg">
+                                <option value="mp3" selected>MP3</option>
+                                <option value="mp4">Video</option>
+                            </select>
                         </div>
                         <div class="col-md-2">
                             <button id="searchChannelBtn" class="btn btn-primary btn-lg w-100">Ara</button>
