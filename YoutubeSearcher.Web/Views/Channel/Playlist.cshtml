@@ -13,7 +13,7 @@
                     <div class="row">
                         <div class="col-md-10">
                             <input type="text" id="playlist" class="form-control form-control-lg"
-                                   placeholder="Playlist URL girin" 
+                                   placeholder="Playlist URL girin"
                                    value="https://www.youtube.com/playlist?list=PLGBuKfnErZlDXoq9Naa6qYtstCv_8CVRQ" />
                         </div>
                         <div class="col-md-2">
@@ -24,22 +24,11 @@
             </div>
 
             <!-- Kanal Bilgileri -->
-            <div id="channelInfo" class="card mb-4" style="display: none;">
-                <div class="card-header">
-                    <h5 id="channelTitle"></h5>
-                </div>
+            <div id="playlistInfo" class="card mb-4" style="display: none;">
             </div>
 
             <!-- Oynatma Listeleri -->
-            <div id="playlistsSection" class="card mb-4" style="display: none;">
-                <div class="card-header">
-                    <h5>Oynatma Listeleri</h5>
-                </div>
-                <div class="card-body">
-                    <div class="row g-3" id="playlistsList">
-                        <!-- Playlistler buraya eklenecek -->
-                    </div>
-                </div>
+            <div id="downloadedVideos" class="card mb-4" style="display: none;">
             </div>
 
             <!-- Playlist İçeriği -->
@@ -82,3 +71,111 @@
     <script src="~/js/playlist-searcher.js"></script>
 }
 
+<style type="text/css">
+    .limitedheight {
+        max-height: 320px;
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+</style>
+
+
+<style>
+    .dv-header {
+        padding: .75rem 1rem;
+        border-bottom: 1px solid #e5e7eb;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 600;
+    }
+
+    .dv-card {
+        background: #fff;
+        border: 1px solid #eef2f7;
+        border-radius: .5rem;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: box-shadow .15s ease, transform .15s ease;
+        height: 100%;
+    }
+
+        .dv-card:hover {
+            box-shadow: 0 6px 18px rgba(0,0,0,.08);
+            transform: translateY(-2px);
+        }
+
+    .dv-thumb-wrap {
+        position: relative;
+        aspect-ratio: 16 / 9;
+        background: #f3f4f6;
+        overflow: hidden;
+    }
+
+    .dv-thumb {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .dv-duration {
+        position: absolute;
+        right: 8px;
+        bottom: 8px;
+        background: rgba(0,0,0,.75);
+        color: #fff;
+        font-size: 12px;
+        line-height: 1;
+        padding: 4px 6px;
+        border-radius: 4px;
+    }
+
+    .dv-body {
+        display: grid;
+        gap: 8px;
+        padding: 10px 12px 12px;
+    }
+
+    .dv-title {
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.3;
+        color: #111827;
+        text-decoration: none;
+    }
+
+        .dv-title:hover {
+            text-decoration: underline;
+        }
+
+    .dv-author {
+        font-size: 12px;
+        color: #6b7280;
+    }
+
+    .dv-stats {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        font-size: 12px;
+        color: #374151;
+    }
+
+    .dv-stat {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        white-space: nowrap;
+    }
+
+    /* Basit ikon yer tutucuları (isterseniz gerçek ikonlarla değiştirin) */
+    .ico-eye::before {
+        content: "👁️";
+    }
+
+    .ico-like::before {
+        content: "👍";
+    }
+</style>

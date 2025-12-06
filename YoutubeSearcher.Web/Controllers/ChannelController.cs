@@ -1,8 +1,11 @@
 using FFMpegCore;
+using Google.Apis.YouTube.v3.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using System.Runtime.CompilerServices;
 using YoutubeExplode;
 using YoutubeExplode.Playlists;
+using YoutubeSearcher.Web.Hubs;
 using YoutubeSearcher.Web.Models;
 using YoutubeSearcher.Web.Services;
 
@@ -15,8 +18,12 @@ namespace YoutubeSearcher.Web.Controllers
         private readonly DownloadService _downloadService;
         private readonly ILogger<ChannelController> _logger;
 
-        public ChannelController(YoutubeService youtubeService, DownloadService downloadService, ILogger<ChannelController> logger)
+        private readonly IHubContext<SearchHub> _hubContext;
+        private static readonly Dictionary<string, bool> _searchPlaylistCancellations = new();
+
+        public ChannelController(YoutubeService youtubeService, DownloadService downloadService, ILogger<ChannelController> logger, IHubContext<SearchHub> hubContext)
         {
+            _hubContext = hubContext;
             _youtubeClient = new YoutubeClient();
             _youtubeService = youtubeService;
             _downloadService = downloadService;
@@ -33,32 +40,31 @@ namespace YoutubeSearcher.Web.Controllers
             return View();
         }
 
-        [HttpPost]
-        public async Task<IActionResult> SearchPlaylist(string playlist)
-        {
+        //[HttpPost]
+        //public async Task<IActionResult> SearchPlaylist(string playlist)
+        //{
+        //    if (string.IsNullOrWhiteSpace(playlist))
+        //    {
+        //        return Json(new { success = false, message = "Playlist url boş olamaz" });
+        //    }
 
-            if (string.IsNullOrWhiteSpace(playlist))
-            {
-                return Json(new { success = false, message = "Playlist url boş olamaz" });
-            }
+        //    var playlistDetail = await _youtubeClient.Playlists.GetAsync(playlist);
 
-            var playlistDetail = await _youtubeClient.Playlists.GetAsync(playlist);
+        //    var taskList = new List<Task>();
+        //    using var youtubeClient = new YoutubeClient();
+        //    var playlistName = string.Join("_", playlistDetail.Title.Split(Path.GetInvalidFileNameChars()));
+        //    var outputDir = @"C:\Users\Meyra\Music\YoutubeSearcher\Playlists\";
 
-            var taskList = new List<Task>();
-            using var youtubeClient = new YoutubeClient();
-            var playlistName = string.Join("_", playlistDetail.Title.Split(Path.GetInvalidFileNameChars()));
-            var outputDir = @"C:\Users\Meyra\Music\YoutubeSearcher\Playlists\";
+        //    await foreach (var video in _youtubeService.GetPlaylistVideosAsync(playlist))
+        //    {
+        //        taskList.Add(Task.Run(() => ProcessVideoAsync(video, youtubeClient, outputDir, playlistName)));
+        //    }
 
-            await foreach (var video in _youtubeService.GetPlaylistVideosAsync(playlist))
-            {
-                taskList.Add(Task.Run(() => ProcessVideoAsync(video, youtubeClient, outputDir, playlistName)));
-            }
+        //    await Task.WhenAll(taskList);
+        //    return Json(new { success = true });
+        //}
 
-            await Task.WhenAll(taskList);
-            return Json(new { success = true });
-        }
-
-        static async Task ProcessVideoAsync(VideoInfo video, YoutubeClient youtube, string outputDir, string playlistName)
+        static async Task ProcessVideoAsync(VideoInfo video, YoutubeClient youtube, string outputDir, string playlistName, IHubContext<SearchHub> hubContext, string searchId)
         {
             // Manifest ve en yüksek bitrateli ses stream'i
             var streamManifest = await youtube.Videos.Streams.GetManifestAsync(video.Url);
@@ -66,7 +72,9 @@ namespace YoutubeSearcher.Web.Controllers
                                            .OrderByDescending(s => s.Bitrate)
                                            .FirstOrDefault();
 
+            if (!Directory.Exists(outputDir)) { Directory.CreateDirectory(outputDir); }
             outputDir = outputDir + @"\" + playlistName;
+            if (!Directory.Exists(outputDir)) { Directory.CreateDirectory(outputDir); }
 
             if (streamInfo == null)
                 throw new InvalidOperationException("Uygun ses akışı bulunamadı.");
@@ -111,7 +119,7 @@ namespace YoutubeSearcher.Web.Controllers
                         options.ForceFormat("mp3");
                         options.WithCustomArgument("-c:a libmp3lame");
                         options.WithCustomArgument("-b:a 192k");           // bitrate örneği
-                        options.WithCustomArgument($"-metadata album=\"{EscapeForFfmpeg(playlistName)}\"");
+                        options.WithCustomArgument($"-metadata album=\"{playlistName.EscapeForFfmpeg()}\"");
                         if (ext == ".png")
                         {
                             options.WithCustomArgument("-c:v png");
@@ -150,16 +158,12 @@ namespace YoutubeSearcher.Web.Controllers
                 {
                     try { System.IO.File.Delete(tempFile); } catch { /* ignore */ }
                 }
+
+                await hubContext.Clients.Group(searchId).SendAsync("VideoDownloaded", video);
+
             }
+
         }
-
-
-        static string EscapeForFfmpeg(string? s)
-        {
-            if (string.IsNullOrEmpty(s)) return "";
-            return s.Replace("\"", "\\\""); // çift tırnakları kaçır
-        }
-
 
         [HttpPost]
         public async Task<IActionResult> SearchChannel(string channelInput)
@@ -266,6 +270,117 @@ namespace YoutubeSearcher.Web.Controllers
                 return Json(new { success = false, message = $"Hata: {ex.Message}" });
             }
         }
+
+
+
+
+
+        [HttpPost]
+        public async Task<IActionResult> StartSearchPlaylist(string playListUrl, string searchId)
+        {
+            if (string.IsNullOrWhiteSpace(playListUrl))
+            {
+                return Json(new { success = false, message = "Playlist url boş olamaz" });
+            }
+
+            // Cancellation flag'ini temizle
+            _searchPlaylistCancellations[searchId] = false;
+
+            _ = Task.Run(async () => { await StartDownloadPlaylist(playListUrl, searchId); });
+
+            return Json(new { success = true, message = "İndirme başlatıldı." });
+
+        }
+
+        private async Task<IActionResult> StartDownloadPlaylist(string playListUrl, string searchId)
+        {
+            var count = 0;
+            const int maxResults = 1000;
+
+            var playlistDetail = await _youtubeClient.Playlists.GetAsync(playListUrl);
+            await _hubContext.Clients.Group(searchId).SendAsync("PlaylistSearchStarted", playlistDetail);
+
+            using var youtubeClient = new YoutubeClient();
+            var playlistName = string.Join("_", playlistDetail.Title.Split(Path.GetInvalidFileNameChars()));
+            var outputDir = @"E:\YoutubeSearcher\Playlists\";
+
+            await foreach (var video in _youtubeService.GetPlaylistVideosAsync(playListUrl))
+            {
+
+                // Pause kontrolü
+                while (_searchPlaylistCancellations.ContainsKey(searchId) && _searchPlaylistCancellations[searchId])
+                {
+                    await Task.Delay(100);
+                }
+
+                if (count >= maxResults) break;
+
+                try
+                {
+                    ProcessVideoAsync(video, youtubeClient, outputDir, playlistName, _hubContext, searchId);
+                    count++;
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "Video bilgisi alınırken hata");
+                }
+
+            }
+
+            await _hubContext.Clients.Group(searchId).SendAsync("SearchCompleted", count);
+
+            return Json(new { success = true, message = "İndirme başlatıldı." });
+
+        }
+
+        //private async Task PlaylistSearchResults(string playListUrl, string searchId)
+        //{
+        //    try
+        //    {
+
+
+        //        await _hubContext.Clients.Group(searchId).SendAsync("PlaylistSearchStarted", playListUrl);
+
+        //        await foreach (var result in _youtubeService.GetSearchStreamAsync(playListUrl))
+        //        {
+        //            // Pause kontrolü
+        //            while (_searchPlaylistCancellations.ContainsKey(searchId) && _searchPlaylistCancellations[searchId])
+        //            {
+        //                await Task.Delay(100);
+        //            }
+
+        //            if (count >= maxResults) break;
+
+        //            try
+        //            {
+        //                var videoInfo = await _youtubeService.GetVideoInfoAsync(result.Id.Value);
+        //                if (videoInfo == null) continue;
+
+        //                await _hubContext.Clients.Group(searchId).SendAsync("VideoFound", videoInfo);
+        //                count++;
+        //            }
+        //            catch (Exception ex)
+        //            {
+        //                _logger.LogError(ex, "Video bilgisi alınırken hata");
+        //            }
+        //        }
+
+        //        await _hubContext.Clients.Group(searchId).SendAsync("SearchCompleted", count);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        _logger.LogError(ex, "Arama streaming hatası");
+        //        await _hubContext.Clients.Group(searchId).SendAsync("SearchError", ex.Message);
+        //    }
+        //    finally
+        //    {
+        //        // Cleanup
+        //        _searchCancellations.Remove(searchId);
+        //    }
+        //}
+
+
+
     }
 
     public class PlaylistDownloadRequest

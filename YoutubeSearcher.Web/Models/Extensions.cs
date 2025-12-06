@@ -7,13 +7,17 @@ namespace YoutubeSearcher.Web.Models
 
         public static string CleanString(this string txt)
         {
-
             var res = Regex.Replace(txt, @"[^\u0000-\u007F]", String.Empty);
             res = Regex.Replace(res, "[\\\\/:*?<>|\"]", String.Empty);
             res = Regex.Replace(res, @"\s+", " ").Trim();
 
             return res;
+        }
 
+        public static string EscapeForFfmpeg(this string? s)
+        {
+            if (string.IsNullOrEmpty(s)) return "";
+            return s.Replace("\"", "\\\""); // çift tırnakları kaçır
         }
 
     }

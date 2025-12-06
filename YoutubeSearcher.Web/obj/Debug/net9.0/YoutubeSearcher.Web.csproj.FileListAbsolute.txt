@@ -373,7 +373,6 @@ D:\Projects\YoutubeSearcher\YoutubeSearcher.Web\obj\Debug\net9.0\scopedcss\proje
 D:\Projects\YoutubeSearcher\YoutubeSearcher.Web\obj\Debug\net9.0\compressed\vpsohmz80w-h6d6uczk8j.gz
 D:\Projects\YoutubeSearcher\YoutubeSearcher.Web\obj\Debug\net9.0\compressed\7yf6f9cf5a-61n19gt1b8.gz
 D:\Projects\YoutubeSearcher\YoutubeSearcher.Web\obj\Debug\net9.0\compressed\xczfko3phz-2nz5lbljij.gz
-D:\Projects\YoutubeSearcher\YoutubeSearcher.Web\obj\Debug\net9.0\compressed\xopkq3prb7-0edoy0gme5.gz
 D:\Projects\YoutubeSearcher\YoutubeSearcher.Web\obj\Debug\net9.0\compressed\ydmvbvdwi4-xtxxf3hu2r.gz
 D:\Projects\YoutubeSearcher\YoutubeSearcher.Web\obj\Debug\net9.0\compressed\r4fzzi6crv-tnp4j5q6qk.gz
 D:\Projects\YoutubeSearcher\YoutubeSearcher.Web\obj\Debug\net9.0\compressed\yeshvp12v5-bqjiyaj88i.gz
@@ -448,3 +447,4 @@ D:\Projects\YoutubeSearcher\YoutubeSearcher.Web\obj\Debug\net9.0\refint\YoutubeS
 D:\Projects\YoutubeSearcher\YoutubeSearcher.Web\obj\Debug\net9.0\YoutubeSearcher.Web.pdb
 D:\Projects\YoutubeSearcher\YoutubeSearcher.Web\obj\Debug\net9.0\YoutubeSearcher.Web.genruntimeconfig.cache
 D:\Projects\YoutubeSearcher\YoutubeSearcher.Web\obj\Debug\net9.0\ref\YoutubeSearcher.Web.dll
+D:\Projects\YoutubeSearcher\YoutubeSearcher.Web\obj\Debug\net9.0\compressed\xopkq3prb7-zoxvm7ey6f.gz
